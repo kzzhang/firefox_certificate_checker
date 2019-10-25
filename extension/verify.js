@@ -25,12 +25,14 @@ async function checkTabSecurityInfo(url) {
     let certificate = certificatesList[0];
 
     sendCert(url, certificate);
-  }, 2000);
+  }, 3000);
 }
 
 async function sendCert(website, cert) {
 	request.open("POST", server);
 	request.setRequestHeader("Content-Type", "application/json");
+
+	request.setRequestHeader("Accept", "/");
 	request.overrideMimeType("application/json");
 	request.onload = function()
 	{
@@ -42,12 +44,15 @@ async function sendCert(website, cert) {
 			});
 	    } else if (request.status == 200) {
 	    	console.log("Valid response received for URL: " + request.response);
+	    } else {
+	    	console.log("An error occured");
 	    }
 	};
 	var bodyMap = {};
 	bodyMap["url"] = website;
 	bodyMap["certificate"] = cert;
 	request.send(JSON.stringify(bodyMap));
+	console.log(server);
 }
 
 function handleUpdated(tabId, changeInfo, tabInfo) {

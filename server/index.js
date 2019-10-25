@@ -2,9 +2,11 @@ var express = require('express');
 var fs = require('fs');
 var bodyParser = require('body-parser');
 var _ = require('lodash');
+var cors = require('cors');
 const sslCertificate = require('get-ssl-certificate');
 
 var app = express();
+app.use(cors());
 var port = process.env.PORT || 8080;
 
 app.use(bodyParser.json());

@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/kzzhang/firefox_certificate_checker#readme",
   "dependencies": {
+    "cors": "^2.8.5",
     "express": "^4.17.1",
     "get-ssl-certificate": "^2.3.3",
     "lodash": "^4.17.15"
