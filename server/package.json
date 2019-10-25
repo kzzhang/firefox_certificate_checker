@@ -1,0 +1,24 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "server for FireFox Certificate Checker extension",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kzzhang/firefox_certificate_checker.git"
+  },
+  "author": "Kevin Zhang",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kzzhang/firefox_certificate_checker/issues"
+  },
+  "homepage": "https://github.com/kzzhang/firefox_certificate_checker#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "get-ssl-certificate": "^2.3.3",
+    "lodash": "^4.17.15"
+  }
+}

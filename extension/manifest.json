@@ -1,0 +1,23 @@
+{
+
+  "manifest_version": 2,
+  "name": "Certificate Checker",
+  "version": "1.0",
+  "description": "Compares the certificate of websites you visit with that retrieved from a server, looking for discrepencies.",
+
+  "icons": {
+    "48": "border-48.png"
+  },
+
+  "background": {
+    "scripts": ["verify.js"]
+  },
+  "permissions": [
+    "webRequest",
+    "webRequestBlocking",
+    "<all_urls>",
+    "tabs",
+    "notifications"
+  ]
+
+}
