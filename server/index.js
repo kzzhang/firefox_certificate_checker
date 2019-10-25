@@ -85,7 +85,7 @@ app.post('/', function(req, res) {
 			console.log("Pass - " + url);
 			res.type('json')
 			res.status(200);
-			res.end();
+			res.end(req.body.url);
 		} else {
 			console.log("Fail - " + url);
 			res.type('json')

@@ -1,4 +1,4 @@
-let server = "http://localhost:8080";
+let server = "firefox-certificate-checker.herokuapp.com/";
 let request = new XMLHttpRequest();
 let certificatesMap = new Map();
 
@@ -40,6 +40,8 @@ async function sendCert(website, cert) {
 			    "title": "Bad Certificate Detected!",
 			    "message": "The certificate at URL " + request.response + " was different from what we found from our server."
 			});
+	    } else if (request.status == 200) {
+	    	console.log("Valid response received for URL: " + request.response);
 	    }
 	};
 	var bodyMap = {};
