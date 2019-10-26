@@ -1,4 +1,4 @@
-let server = "firefox-certificate-checker.herokuapp.com/";
+let server = "http://firefox-certificate-checker.herokuapp.com/";
 let request = new XMLHttpRequest();
 let certificatesMap = new Map();
 
@@ -6,14 +6,6 @@ console.log("Firefox Certificate Checker background script loaded!");
 
 let checkedWebsites = { urls: ['<all_urls>'] };
 let extraInfoSpec = ['blocking']; 
-
-const xhr = new XMLHttpRequest();
-xhr.open('GET', "www.google.com");
-xhr.onload = function()
-	{
-		console.log(request.status);
-	};
-xhr.send();
 
 browser.webRequest.onHeadersReceived.addListener(async function(details){
   var requestId = details.requestId;
@@ -38,8 +30,7 @@ async function checkTabSecurityInfo(url) {
 
 async function sendCert(website, cert) {
 	request.open("POST", server);
-	// request.setRequestHeader("Content-Type", "application/json");
-	request.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+	request.setRequestHeader("Content-Type", "application/json");
 
 	request.setRequestHeader("Accept", "/");
 	request.overrideMimeType("application/json");
@@ -54,7 +45,7 @@ async function sendCert(website, cert) {
 	    } else if (request.status == 200) {
 	    	console.log("Valid response received for URL: " + request.response);
 	    } else {
-	    	console.log("An error occured");
+	    	console.log("An error occured: "  + request.response);
 	    }
 	};
 	var bodyMap = {};
