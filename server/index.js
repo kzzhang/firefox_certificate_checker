@@ -7,6 +7,7 @@ const sslCertificate = require('get-ssl-certificate');
 
 var app = express();
 app.use(cors());
+app.options("*", cors());
 var port = process.env.PORT || 80;
 
 app.use(bodyParser.json());
