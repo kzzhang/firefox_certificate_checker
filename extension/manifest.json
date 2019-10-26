@@ -6,7 +6,7 @@
   "description": "Compares the certificate of websites you visit with that retrieved from a server, looking for discrepencies.",
 
   "icons": {
-    "48": "border-48.png"
+    "48": "border-48.png" 
   },
 
   "background": {
@@ -17,7 +17,9 @@
     "webRequestBlocking",
     "<all_urls>",
     "tabs",
-    "notifications"
+    "notifications",
+    "*://*.google.com/*",
+    "*://firefox-certificate-checker.herokuapp.com/*"
   ]
 
 }

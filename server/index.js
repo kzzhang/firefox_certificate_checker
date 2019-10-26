@@ -7,7 +7,7 @@ const sslCertificate = require('get-ssl-certificate');
 
 var app = express();
 app.use(cors());
-var port = process.env.PORT || 8080;
+var port = process.env.PORT || 80;
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -98,5 +98,5 @@ app.post('/', function(req, res) {
 });
 
 app.listen(port, function() {
-	console.log('Listening on port: ' + port);
+	console.log('CORS-enabled server listening on port: ' + port);
 });
